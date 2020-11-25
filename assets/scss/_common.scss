@@ -1,0 +1,154 @@
+*
+{
+    box-sizing: border-box;
+}
+html
+{
+    font-family: $font-main;
+    font-size: $font-size;
+
+    overflow-y: scroll;
+
+    color: $color-gray;
+}
+h1
+{
+    font-family: $font-header;
+
+    @include lg-min
+    {
+        font-size: 3.75rem;
+    };
+    @include lg-md
+    {
+        font-size: 2.5rem;
+    };
+    @include md
+    {
+        font-size: 1.875rem;
+    };
+}
+h2
+{
+    font-family: 'Roboto Slab', serif;
+    line-height: 1.2em;
+
+    letter-spacing: .1em;
+
+    color: $color-primary;
+
+    @include lg-min
+    {
+        font-size: 2.5rem;
+
+        margin-bottom: 56px;
+    }
+    @include lg-md
+    {
+        font-size: 2rem;
+
+        margin-bottom: 42px;
+    }
+    @include md-sm
+    {
+        font-size: 1.5rem;
+
+        margin-bottom: 36px;
+    }
+    @include sm
+    {
+        font-size: 1.5rem;
+
+        margin-bottom: 36px;
+
+        text-align: center;
+    }
+}
+
+h3
+{
+    font-size: 1.125rem;
+    letter-spacing: 0.05em;
+    color: $color-gray;
+}
+
+p
+{
+    color: $color-gray;
+}
+
+a
+{
+    text-decoration: none;
+
+    color: $color-light;
+}
+
+img {
+    border-style: none;
+}
+
+input
+{
+    &:focus
+    {
+        outline: none;
+    }
+}
+
+.btn,
+.btn-accent
+{
+    display: block;
+
+    transition: background-color .5s, border-color .5s;
+    text-align: center;
+    letter-spacing: .1em;;
+}
+.btn
+{
+    border: 2px solid $color-light;
+    background-color: rgba(255, 255, 255, .1);
+
+    @include lg-min
+    {
+        font-size: 1.125rem;
+
+        min-width: 250px;
+        height: 60px;
+        padding: 18px $gap;
+    }
+    @include lg-md
+    {
+        min-width: 200px;
+        height: 50px;
+        padding: 14px $gap;
+    }
+    @include md
+    {
+        min-width: 170px;
+        height: 40px;
+        padding: 10px $gap;
+
+        letter-spacing: .05em;
+    }
+
+    &-accent
+    {
+        font-size: 1.125rem;
+
+        height: 60px;
+        padding: 18px $gap;
+
+        border: 2px solid $color-primary;
+        background-color: rgba($color-primary, .8);
+    }
+}
+
+.btn:hover,
+.btn:focus,
+.btn-accent:hover,
+.btn-accent:focus
+{
+    background-color: $color-accent;
+}

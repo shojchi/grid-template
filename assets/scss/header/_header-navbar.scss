@@ -1,0 +1,168 @@
+.header-navbar
+{
+    display: flex;
+
+    justify-content: flex-end;
+
+    &__btn
+    {
+        position: relative;
+
+        width: 30px;
+        height: 22.5px;
+        margin: $gap 0;
+
+        cursor: pointer;
+        transition: .5s ease-in-out;
+        transform: rotate(0deg);
+
+        @include md-min
+        {
+            display: none;
+        }
+        &-row
+        {
+            position: absolute;
+
+            display: block;
+
+            width: 50%;
+            height: 3px;
+
+            transition: .25s ease-in-out;
+            transform: rotate(0deg);
+
+            opacity: 1;
+            background: $color-light;
+
+            &:nth-child(even)
+            {
+                left: 50%;
+
+                border-radius: 0 3px 3px 0;
+            }
+
+            &:nth-child(odd)
+            {
+                left: 0;
+
+                border-radius: 3px 0 0 3px;
+            }
+
+            &:nth-child(1),
+            &:nth-child(2)
+            {
+                top: 0;
+            }
+
+            &:nth-child(3),
+            &:nth-child(4)
+            {
+                top: 9px;
+            }
+
+            &:nth-child(5),
+            &:nth-child(6)
+            {
+                top: 18px;
+            }
+        }
+
+        &--active span
+        {
+            &:nth-child(1),
+            &:nth-child(6)
+            {
+                transform: rotate(45deg);
+            }
+
+            &:nth-child(2),
+            &:nth-child(5)
+            {
+                transform: rotate(-45deg);
+            }
+
+            &:nth-child(1)
+            {
+                top: 3.5px;
+                left: 2.5px;
+            }
+
+            &:nth-child(2)
+            {
+                top: 3.5px;
+                left: calc(50% - 2.5px);
+            }
+
+            &:nth-child(3)
+            {
+                left: -50%;
+
+                opacity: 0;
+            }
+
+            &:nth-child(4)
+            {
+                left: 100%;
+
+                opacity: 0;
+            }
+
+            &:nth-child(5)
+            {
+                top: 14.5px;
+                left: 2.5px;
+            }
+
+            &:nth-child(6)
+            {
+                top: 14.5px;
+                left: calc(50% - 2.5px);
+            }
+        }
+    }
+
+    &__list
+    {
+        @include unlist(0 (-$gap) 0 0);
+        @include md-min
+        {
+            display: grid;
+
+            width: 100%;
+
+            justify-content: end;
+            grid-template-columns: repeat(auto-fit, minmax(50px, max-content));
+        }
+        @include md
+        {
+            position: absolute;
+            top: 100%;
+            right: $gap * 2;
+
+            display: none;
+
+            text-align: right;
+
+            background-color: rgba($color-gray-dark, .9);
+        }
+    }
+
+    &__link
+    {
+        font-size: 1.125rem;
+
+        display: block;
+
+        padding: $gap;
+
+        transition: color .5s;
+        letter-spacing: .09em;
+
+        &:hover,
+        &:focus
+        {
+            color: $color-accent;
+        }
+    }
+}
